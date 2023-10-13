@@ -1,0 +1,78 @@
+.root {
+  --button-height-sm: 36px;
+
+  --button-padding-x-sm: 18px;
+
+  --button-height: var(--button-height-sm);
+  --button-padding-x: var(--button-padding-x-sm);
+
+  user-select: none;
+  font-size: 14px;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica,
+    Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
+  font-weight: 600;
+  position: relative;
+  line-height: 1;
+  text-align: center;
+  cursor: pointer;
+
+  background: var(--button-background, #fff);
+  color: var(--button-label-color, #000);
+  border: var(--button-border-weight, 0) solid #ced4da;
+
+  border-radius: 0.25rem;
+  height: var(--button-height, var(--button-height-sm));
+  padding-left: var(
+    --_button-padding-left,
+    var(--button-padding-x, var(--button-padding-x-sm))
+  );
+  padding-right: var(
+    --_button-padding-right,
+    var(--button-padding-x, var(--button-padding-x-sm))
+  );
+
+  &:hover {
+    background: color-mix(in srgb, var(--button-background), black 5%);
+  }
+
+  &[data-variant="default"] {
+    --button-border-weight: 1px;
+    --button-background: #fff;
+    --button-label-color: #000;
+  }
+
+  &[data-variant="filled"] {
+    --button-background: var(--_button-color, #868e96);
+    --button-label-color: #ffffff;
+  }
+
+  &[data-variant="light"] {
+    --button-background: color-mix(
+      in srgb,
+      var(--_button-color, #868e96) 10%,
+      transparent
+    );
+    --button-label-color: var(--_button-color, #868e96);
+  }
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: var(--button-justify, center);
+  height: 100%;
+  overflow: visible;
+}
+
+.label {
+  white-space: nowrap;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  opacity: var(--button-label-opacity, 1);
+
+  &[data-loading] {
+    --button-label-opacity: 0.2;
+  }
+}

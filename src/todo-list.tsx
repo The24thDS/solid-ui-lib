@@ -1,6 +1,6 @@
 import { For } from "solid-js";
 import { createStore } from "solid-js/store";
-import { Button } from "./lib/Button";
+import { Button } from "./lib/components/core/Button/Button";
 
 type Todo = { id: number; text: string; completed: boolean };
 
